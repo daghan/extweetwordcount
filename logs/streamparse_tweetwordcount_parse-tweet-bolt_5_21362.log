@@ -1,0 +1,11 @@
+2017-04-09 04:56:00,296 - streamparse.storm.component - ERROR - Exception in ParseTweet.run()
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/streamparse-2.1.4-py2.7.egg/streamparse/storm/component.py", line 489, in run
+    self._run()
+  File "/usr/lib/python2.7/site-packages/streamparse-2.1.4-py2.7.egg/streamparse/storm/bolt.py", line 219, in _run
+    self.process(tup)
+  File "bolts/parse.py", line 19, in process
+    self.log(tweet)
+  File "/usr/lib/python2.7/site-packages/streamparse-2.1.4-py2.7.egg/streamparse/storm/component.py", line 407, in log
+    self.send_message({'command': 'log', 'msg': str(message),
+UnicodeEncodeError: 'ascii' codec can't encode character u'\U0001f31e' in position 17: ordinal not in range(128)

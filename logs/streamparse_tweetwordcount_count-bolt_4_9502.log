@@ -1,0 +1,13 @@
+2017-04-11 01:26:24,652 - streamparse.stdout - INFO - hello world
+2017-04-11 01:26:24,652 - streamparse.stdout - INFO - I am here
+2017-04-11 01:26:24,653 - streamparse.stdout - INFO - Could not create Tcount
+2017-04-11 01:26:24,656 - streamparse.storm.component - ERROR - Exception in WordCounter.run()
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/streamparse-2.1.4-py2.7.egg/streamparse/storm/component.py", line 487, in run
+    self.initialize(storm_conf, context)
+  File "bolts/wordcount.py", line 45, in initialize
+    self.conn = psycopg2.connect(database="Tcount", user="postgres", password="pass", host="localhost", port="5432")
+  File "/usr/lib64/python2.7/site-packages/psycopg2/__init__.py", line 164, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, async=async)
+OperationalError: FATAL:  database "Tcount" does not exist
+

@@ -1,0 +1,7 @@
+2017-04-11 01:19:43,462 - streamparse.storm.component - ERROR - Exception in WordCounter.run()
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/streamparse-2.1.4-py2.7.egg/streamparse/storm/component.py", line 487, in run
+    self.initialize(storm_conf, context)
+  File "bolts/wordcount.py", line 23, in initialize
+    cur = conn.cursor()
+UnboundLocalError: local variable 'conn' referenced before assignment
