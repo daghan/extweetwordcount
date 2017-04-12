@@ -1,4 +1,4 @@
-#How to run the example
+# How to run the example
 
 - Modify the Twittercredentials.py file to update Twitter API credentials. (the credentials will be sent via email).
 - type: cd extweetwordcount
