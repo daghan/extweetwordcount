@@ -5,7 +5,7 @@ from streamparse.bolt import Bolt
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import psycopg2.extensions
-  
+
 
 
 class WordCounter(Bolt):
@@ -52,10 +52,13 @@ class WordCounter(Bolt):
         if not(table_exists):
             #Create a Table
             #The first step is to create a cursor.
-            cur.execute("CREATE TABLE tweetwordcount \
-                (word TEXT PRIMARY KEY     NOT NULL, \
-                count INT     NOT NULL);")
-            self.conn.commit()
+            try:
+                cur.execute("CREATE TABLE tweetwordcount \
+                    (word TEXT PRIMARY KEY     NOT NULL, \
+                    count INT     NOT NULL);")
+                self.conn.commit()
+            except:
+                print("race condition")
         else:
             print("Table tweetwordcount exists")
 
