@@ -5,7 +5,7 @@ from streamparse.bolt import Bolt
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import psycopg2.extensions
-
+  
 
 
 class WordCounter(Bolt):
